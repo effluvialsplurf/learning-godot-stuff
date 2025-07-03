@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://chjek8tnmgw8o"]
 
-[ext_resource type="Script" path="res://CharacterBody2d.cs" id="1_anxs3"]
+[ext_resource type="Script" uid="uid://chrg0mfw0scti" path="res://CharacterBody2d.cs" id="1_anxs3"]
 [ext_resource type="Script" uid="uid://dd7gmkfgae6pq" path="res://TestTimer.cs" id="2_c6tcs"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_mggwm"]
@@ -28,5 +28,6 @@ position = Vector2(-2, 0)
 shape = SubResource("RectangleShape2D_anxs3")
 debug_color = Color(0.621045, 0.534001, 0, 0.42)
 
-[node name="TestTimer" type="Timer" parent="."]
+[node name="TestTimer" type="Timer" parent="." node_paths=PackedStringArray("testTimer")]
 script = ExtResource("2_c6tcs")
+testTimer = NodePath(".")

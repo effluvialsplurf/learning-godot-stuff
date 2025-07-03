@@ -1,5 +1,6 @@
 using Godot;
 using System;
+using System.Collections.Generic;
 
 public partial class TestTimer : Timer
 {
@@ -38,5 +39,15 @@ public partial class TestTimer : Timer
     {
         // print some message
         GD.Print($"Script executed at: {DateTime.Now.ToLongTimeString()}");
+
+        // get our random instance
+        Random _random = new Random();
+
+        // grab all the nodes
+        List<Node> sceneNodes = SceneNodeCollector.GetAllChildrenNodes(GetTree().CurrentScene);
+        // random index
+        int randomIdx = _random.Next(0, sceneNodes.Count);
+        // print that jawn
+        GD.Print($"Node selected: {sceneNodes[randomIdx]}");
     }
 }
